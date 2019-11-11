@@ -1,0 +1,75 @@
+<div class="container">
+  <form [formGroup]="loginUser" [ngClass]="userLogged ? 'formLogged' : 'loginForm'">
+
+    <h1>¡Bienvenido a la aplicación!</h1>
+
+    <span class="texto-ayuda" *ngIf="!userLogged">Seleccione el tipo de inicio de sesión o bien registrar una cuenta:</span>
+
+    <p class="texto-ayuda" *ngIf="userLogged">Ya tiene iniciada la sesion en la aplicación!</p>
+
+    <!-- Inicio de sesion con correo o Registro de cuenta -->
+    <div class="toggleForm" *ngIf="!userLogged">
+      <mat-button-toggle-group formControlName="cambioLoginSignup">
+        <mat-button-toggle value="login" (click)="showLogin()">
+          Iniciar sesión
+        </mat-button-toggle>
+        <mat-button-toggle value="register" (click)="showRegister()">
+          Registrar cuenta
+        </mat-button-toggle>
+        <mat-button-toggle value="social" (click)="showSocial()">
+          Redes sociales
+        </mat-button-toggle>
+        <mat-button-toggle value="social" (click)="showAnonim()">
+          Modo anónimo
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+    <div *ngIf="!userLogged && ( showLoginFlag || showRegisterFlag )">
+      <mat-form-field appearance="outline">
+        <mat-label>Ingrese su correo</mat-label>
+        <input type="email" matInput formControlName="emailJugador">
+        <mat-icon matSuffix>account_box</mat-icon>
+      </mat-form-field>
+    </div>
+    <div *ngIf="!userLogged && ( showLoginFlag || showRegisterFlag )">
+      <mat-form-field appearance="outline">
+        <mat-label>Ingrese la contraseña</mat-label>
+        <input type="password" matInput formControlName="passwordJugador">
+        <mat-icon matSuffix>assignment_ind</mat-icon>
+      </mat-form-field>
+    </div>
+    <!--  -->
+    <button class="boton" mat-raised-button color="warn" (click)="logout()" *ngIf="userLogged">Salir de la sesión</button>
+    <button class="boton" mat-raised-button color="primary" (click)="login()" *ngIf="!userLogged && showLoginFlag" [disabled]="!loginUser.valid || userLogged">Iniciar sesión</button>
+    <button class="boton" mat-raised-button color="primary" (click)="changePassword()" *ngIf="!userLogged && showLoginFlag">¿Olvidaste la contraseña?</button>
+    <button class="boton" mat-raised-button color="primary" (click)="login()" *ngIf="showRegisterFlag" [disabled]="!loginUser.valid || userLogged">Registrar email</button>
+    <!-- Opciones del usuario -->
+    <mat-expansion-panel class="panel" *ngIf="userLogged">
+      <mat-expansion-panel-header class="greenColor">
+        <mat-panel-title>
+          Borrado de la cuenta
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <!-- Inicio del contenido del expansion panel -->
+      <button mat-raised-button color="warn" (click)="deleteUser()" *ngIf="userLogged">Eliminar la cuenta</button>
+      <!-- Fin del contenido del expansion panel -->
+    </mat-expansion-panel>
+    <!-- Inicio de sesion con Google -->
+    <div *ngIf="!userLogged && showSocialFlag" class="loginIcons">
+      <div class="socialForm">
+        <img appHover src="./assets/images/google-icon.png" (click)="googleLogin()" class="googleIcon animated">
+        <img appHover src="./assets/images/facebook-icon.png" (click)="facebookLogin()" class="facebookIcon animated">
+      </div>
+    </div>
+
+    <div *ngIf="!userLogged && showAnonimFlag" class="loginIcons">
+      <div class="socialForm">
+        <img appHover *ngIf="!isAnonimous" src="./assets/images/anonim-icon.png" (click)="anonimLogin()" class="anonimIconLogin animated">
+        <img appHover *ngIf="isAnonimous" src="./assets/images/anonim-icon.png" (click)="anonimLogout()" class="anonimIconLogout animated">
+      </div>
+      <span class="texto-ayuda" *ngIf="!isAnonimous">Toque en la figura para entrar como invitado!</span>
+      <span class="texto-ayuda" *ngIf="isAnonimous">Toque en la figura para salir del modo invitado!</span>
+    </div>
+    <!--  -->
+  </form>
+</div>
