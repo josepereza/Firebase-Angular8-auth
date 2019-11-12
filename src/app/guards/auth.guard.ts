@@ -3,6 +3,14 @@ import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from
 import { AngularFireAuth } from '@angular/fire/auth';
 import { map } from 'rxjs/operators';
 
+/**
+ * Este es el guard que se fija que no se pueda acceder a cierta URL sin tener iniciada la sesión
+ * de algún usuario en firebase.
+ * Además también a traves de queryParams retorna la URL a la que se intento acceder para en caso
+ * de tener los permisos necesarios, tras iniciar sesión de forma exitosa se lo redireccione
+ * automaticamente a esa URL original.
+ */
+
 @Injectable({
   providedIn: 'root'
 })

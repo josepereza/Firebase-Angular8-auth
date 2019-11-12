@@ -1,3 +1,10 @@
+/**
+ * La variable firebaseConfig la podemos obtener despues de crear un proyecto web
+ * en firebase, desde la parte de "Settings" de la cuenta de firebase podemos acceder
+ * a nuestros proyectos, y en el web se encuentra esta variable en "Firebase SDK snippet".
+ * Gracias a esta variable podemos acceder a todas las funcionalidades web que ofrece
+ * firebase.
+ */
 export const environment = {
   production: true,
   firebaseConfig: {

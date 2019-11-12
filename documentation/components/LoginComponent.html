@@ -1,0 +1,1750 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>boilerplate-firebase-login documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">boilerplate-firebase-login documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>LoginComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/login/login.component.ts</code>
+</p>
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente que se encarga de crear una cuenta con correo electronico,
+loguear con cuenta propia o a traves de alguna red social, la posibilidad
+de acceder de manera anónima, cerrar sesión y eliminar cualquier cuenta.</p>
+
+    </p>
+
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-login</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./login.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./login.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#isAnonimous">isAnonimous</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#loginAuth">loginAuth</a>
+                            </li>
+                            <li>
+                                <a href="#loginUser">loginUser</a>
+                            </li>
+                            <li>
+                                <a href="#returnUrl">returnUrl</a>
+                            </li>
+                            <li>
+                                <a href="#showAnonimFlag">showAnonimFlag</a>
+                            </li>
+                            <li>
+                                <a href="#showLoginFlag">showLoginFlag</a>
+                            </li>
+                            <li>
+                                <a href="#showRegisterFlag">showRegisterFlag</a>
+                            </li>
+                            <li>
+                                <a href="#showSocialFlag">showSocialFlag</a>
+                            </li>
+                            <li>
+                                <a href="#userLogged">userLogged</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#anonimLogin">anonimLogin</a>
+                            </li>
+                            <li>
+                                <a href="#anonimLogout">anonimLogout</a>
+                            </li>
+                            <li>
+                                <a href="#changePassword">changePassword</a>
+                            </li>
+                            <li>
+                                <a href="#deleteUser">deleteUser</a>
+                            </li>
+                            <li>
+                                <a href="#facebookLogin">facebookLogin</a>
+                            </li>
+                            <li>
+                                <a href="#googleLogin">googleLogin</a>
+                            </li>
+                            <li>
+                                <a href="#login">login</a>
+                            </li>
+                            <li>
+                                <a href="#logout">logout</a>
+                            </li>
+                            <li>
+                                <a href="#setLocalstorage">setLocalstorage</a>
+                            </li>
+                            <li>
+                                <a href="#showAnonim">showAnonim</a>
+                            </li>
+                            <li>
+                                <a href="#showLogin">showLogin</a>
+                            </li>
+                            <li>
+                                <a href="#showRegister">showRegister</a>
+                            </li>
+                            <li>
+                                <a href="#showSocial">showSocial</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, loginAuth: AngularFireAuth, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, spinner: <a href="../injectables/SpinnerService.html">SpinnerService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/components/login/login.component.ts:42</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>El contructor se fija si el usuario esta conectado o es anonimo y lo guarda en dos variables.
+Ademas cuando se recien empieza a ejecutarse activa el spinner y cuando termina de traer la
+información de firebase desactiva el spinner.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>Instancia del servicio de FormBuilder</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>loginAuth</td>
+                                                  
+                                                        <td>
+                                                                    <code>AngularFireAuth</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>Instancia del servicio de AngularFireAuth</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>Instancia del servicio de ActivatedRoute</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>spinner</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SpinnerService.html" target="_self" >SpinnerService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>Instancia del servicio de SpinnerService</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="anonimLogin"></a>
+                    <span class="name">
+                        <b>
+                            anonimLogin
+                        </b>
+                        <a href="#anonimLogin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>anonimLogin()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="205"
+                            class="link-to-prism">src/app/components/login/login.component.ts:205</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Inicio de sesión creando una cuenta anónima, esta cuenta anónima
+eventualmente puede transformarse en una cuenta con correo
+electronico manteniendo toda la información que pudiera tener.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="anonimLogout"></a>
+                    <span class="name">
+                        <b>
+                            anonimLogout
+                        </b>
+                        <a href="#anonimLogout"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>anonimLogout()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="213"
+                            class="link-to-prism">src/app/components/login/login.component.ts:213</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Elimino la cuenta temporal del user anonimo. </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changePassword"></a>
+                    <span class="name">
+                        <b>
+                            changePassword
+                        </b>
+                        <a href="#changePassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>changePassword()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="130"
+                            class="link-to-prism">src/app/components/login/login.component.ts:130</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Desloguea al usuario anónimo por si estaba activo.
+Envia un correo de recuperacion de contraseña al correo indicado
+como parametro a la función sendPasswordResetEmail() controlando
+los errores.
+Este correo que se genera de manera automática puede ser personalizado
+en las configuraciones de las plantillas de Authentication en firebase.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteUser"></a>
+                    <span class="name">
+                        <b>
+                            deleteUser
+                        </b>
+                        <a href="#deleteUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deleteUser()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="220"
+                            class="link-to-prism">src/app/components/login/login.component.ts:220</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Elimina la cuenta que esta logueada en ese momento con la función &quot;delete()&quot;
+controlando el flujo de error y ademas cerrando la sesion al usuario.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="facebookLogin"></a>
+                    <span class="name">
+                        <b>
+                            facebookLogin
+                        </b>
+                        <a href="#facebookLogin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>facebookLogin()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="184"
+                            class="link-to-prism">src/app/components/login/login.component.ts:184</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Invoca a la función que guarda en el localstorage y desloguea
+al usuario anónimo por si estaba activo.
+Creación de cuenta y/o inicio de sesión a traves de Facebook,
+usando la función &quot;signInWithRedirect()&quot; con el provider de Facebook
+&quot;FacebookAuthProvider()&quot; y controlando los posibles errores.
+La función &quot;signInWithRedirect()&quot; y &quot;signInWithPopup()&quot; hacen las
+mismas funciones, con la diferencia que uno crea una ventana emergente
+y el otro una redireccion en la misma pestaña.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="googleLogin"></a>
+                    <span class="name">
+                        <b>
+                            googleLogin
+                        </b>
+                        <a href="#googleLogin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>googleLogin()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="160"
+                            class="link-to-prism">src/app/components/login/login.component.ts:160</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Invoca a la función que guarda en el localstorage y desloguea
+al usuario anónimo por si estaba activo.
+Creación de cuenta y/o inicio de sesión a traves de Google,
+usando la función &quot;signInWithRedirect()&quot; con el provider de Google
+&quot;GoogleAuthProvider()&quot; y controlando los posibles errores.
+La función &quot;signInWithRedirect()&quot; y &quot;signInWithPopup()&quot; hacen las
+mismas funciones, con la diferencia que uno crea una ventana emergente
+y el otro una redireccion en la misma pestaña.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="login"></a>
+                    <span class="name">
+                        <b>
+                            login
+                        </b>
+                        <a href="#login"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>login()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="82"
+                            class="link-to-prism">src/app/components/login/login.component.ts:82</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Desloguea al usuario anónimo por si estaba activo.
+Dependiendo de que se seleccione en el toogle se ejecuta
+el inicio de sesión o el registro de cuenta.
+En el caso de inicio de sesión se ejecuta la función
+&quot;signInWithEmailAndPassword()&quot; pasandole por parametro
+el correo electronico y la contraseña del formulario.
+En el caso de registro de cuenta se ejecuta la función
+&quot;createUserWithEmailAndPassword()&quot; pasandole por parametro
+el correo electronico y la contraseña del formulario.
+En ambos casos se controla el flujo de errores.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logout"></a>
+                    <span class="name">
+                        <b>
+                            logout
+                        </b>
+                        <a href="#logout"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>logout()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="239"
+                            class="link-to-prism">src/app/components/login/login.component.ts:239</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Cierra cualquier sesión que este iniciada con la funcion &quot;signOut()&quot;
+y lo despliega en un confirm() al uduario.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setLocalstorage"></a>
+                    <span class="name">
+                        <b>
+                            setLocalstorage
+                        </b>
+                        <a href="#setLocalstorage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setLocalstorage()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="249"
+                            class="link-to-prism">src/app/components/login/login.component.ts:249</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Guarda en el localStorage el queryParamMap que recata del guard. </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showAnonim"></a>
+                    <span class="name">
+                        <b>
+                            showAnonim
+                        </b>
+                        <a href="#showAnonim"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>showAnonim()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="276"
+                            class="link-to-prism">src/app/components/login/login.component.ts:276</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Ocualta todo menos el acceso anónimo. </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showLogin"></a>
+                    <span class="name">
+                        <b>
+                            showLogin
+                        </b>
+                        <a href="#showLogin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>showLogin()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="255"
+                            class="link-to-prism">src/app/components/login/login.component.ts:255</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Ocualta todo menos el form de login. </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showRegister"></a>
+                    <span class="name">
+                        <b>
+                            showRegister
+                        </b>
+                        <a href="#showRegister"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>showRegister()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="262"
+                            class="link-to-prism">src/app/components/login/login.component.ts:262</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Ocualta todo menos el form de registro. </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showSocial"></a>
+                    <span class="name">
+                        <b>
+                            showSocial
+                        </b>
+                        <a href="#showSocial"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>showSocial()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="269"
+                            class="link-to-prism">src/app/components/login/login.component.ts:269</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Ocualta todo menos las redes sociales. </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isAnonimous"></a>
+                        <span class="name">
+                            <b>
+                            isAnonimous</b>
+                            <a href="#isAnonimous"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/components/login/login.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loginAuth"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            loginAuth</b>
+                            <a href="#loginAuth"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>AngularFireAuth</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/components/login/login.component.ts:54</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description">Instancia del servicio de AngularFireAuth</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loginUser"></a>
+                        <span class="name">
+                            <b>
+                            loginUser</b>
+                            <a href="#loginUser"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.fb.group({
+    emailJugador: [ &#x27;&#x27;, [Validators.required,
+      // tslint:disable-next-line: max-line-length
+      Validators.pattern(/^(([^&lt;&gt;()\[\]\\.,;:\s@&quot;]+(\.[^&lt;&gt;()\[\]\\.,;:\s@&quot;]+)*)|(&quot;.+&quot;))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]],
+    passwordJugador: [ &#x27;&#x27;, [Validators.required]],
+    cambioLoginSignup: [ &#x27;&#x27;, []]
+  })</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/components/login/login.component.ts:36</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Formulario de registro o de logueo, teniendo en cuenta que
+la dirección de correo electronico sea valida segun formato
+<a href="mailto:xxxxxx@xxxxxx.com">xxxxxx@xxxxxx.com</a></p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="returnUrl"></a>
+                        <span class="name">
+                            <b>
+                            returnUrl</b>
+                            <a href="#returnUrl"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/components/login/login.component.ts:23</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="showAnonimFlag"></a>
+                        <span class="name">
+                            <b>
+                            showAnonimFlag</b>
+                            <a href="#showAnonimFlag"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/components/login/login.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="showLoginFlag"></a>
+                        <span class="name">
+                            <b>
+                            showLoginFlag</b>
+                            <a href="#showLoginFlag"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/components/login/login.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="showRegisterFlag"></a>
+                        <span class="name">
+                            <b>
+                            showRegisterFlag</b>
+                            <a href="#showRegisterFlag"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/components/login/login.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="showSocialFlag"></a>
+                        <span class="name">
+                            <b>
+                            showSocialFlag</b>
+                            <a href="#showSocialFlag"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/components/login/login.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="userLogged"></a>
+                        <span class="name">
+                            <b>
+                            userLogged</b>
+                            <a href="#userLogged"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/login/login.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+import { FormBuilder, Validators } from &#x27;@angular/forms&#x27;;
+import { AngularFireAuth } from &#x27;@angular/fire/auth&#x27;;
+import { ActivatedRoute } from &#x27;@angular/router&#x27;;
+// Me permite seleccionar los diferentis tipos de login
+import * as firebase from &#x27;firebase/app&#x27;;
+import { SpinnerService } from &#x27;src/app/servicies/spinner.service&#x27;;
+
+/**
+ * Componente que se encarga de crear una cuenta con correo electronico,
+ * loguear con cuenta propia o a traves de alguna red social, la posibilidad
+ * de acceder de manera anónima, cerrar sesión y eliminar cualquier cuenta.
+ */
+
+@Component({
+  selector: &#x27;app-login&#x27;,
+  templateUrl: &#x27;./login.component.html&#x27;,
+  styleUrls: [&#x27;./login.component.scss&#x27;]
+})
+export class LoginComponent {
+
+  userLogged &#x3D; false;
+  returnUrl: string;
+  isAnonimous: boolean;
+
+  showLoginFlag &#x3D; false;
+  showRegisterFlag &#x3D; false;
+  showSocialFlag &#x3D; false;
+  showAnonimFlag &#x3D; false;
+
+  /**
+   * Formulario de registro o de logueo, teniendo en cuenta que
+   * la dirección de correo electronico sea valida segun formato
+   * xxxxxx@xxxxxx.com
+   */
+  loginUser &#x3D; this.fb.group({
+    emailJugador: [ &#x27;&#x27;, [Validators.required,
+      // tslint:disable-next-line: max-line-length
+      Validators.pattern(/^(([^&lt;&gt;()\[\]\\.,;:\s@&quot;]+(\.[^&lt;&gt;()\[\]\\.,;:\s@&quot;]+)*)|(&quot;.+&quot;))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]],
+    passwordJugador: [ &#x27;&#x27;, [Validators.required]],
+    cambioLoginSignup: [ &#x27;&#x27;, []]
+  });
+
+  /**
+   * El contructor se fija si el usuario esta conectado o es anonimo y lo guarda en dos variables.
+   * Ademas cuando se recien empieza a ejecutarse activa el spinner y cuando termina de traer la
+   * información de firebase desactiva el spinner.
+   * @param fb Instancia del servicio de FormBuilder
+   * @param loginAuth Instancia del servicio de AngularFireAuth
+   * @param route Instancia del servicio de ActivatedRoute
+   * @param spinner Instancia del servicio de SpinnerService
+   */
+  constructor(private fb: FormBuilder,
+              public loginAuth: AngularFireAuth,
+              private route: ActivatedRoute,
+              private spinner: SpinnerService) {
+    this.spinner.showSpinner();
+    this.loginAuth.user
+    .subscribe( user &#x3D;&gt; {
+      if ( user ) {
+        this.userLogged &#x3D; !!user.email;
+        this.isAnonimous &#x3D; user.isAnonymous;
+      } else {
+        this.isAnonimous &#x3D; false;
+      }
+      this.spinner.hideSpinner();
+    });
+  }
+
+  /**
+   * Desloguea al usuario anónimo por si estaba activo.
+   * Dependiendo de que se seleccione en el toogle se ejecuta
+   * el inicio de sesión o el registro de cuenta.
+   * En el caso de inicio de sesión se ejecuta la función
+   * &quot;signInWithEmailAndPassword()&quot; pasandole por parametro
+   * el correo electronico y la contraseña del formulario.
+   * En el caso de registro de cuenta se ejecuta la función
+   * &quot;createUserWithEmailAndPassword()&quot; pasandole por parametro
+   * el correo electronico y la contraseña del formulario.
+   * En ambos casos se controla el flujo de errores.
+   */
+  login() {
+    const email &#x3D; this.loginUser.value.emailJugador;
+    const password &#x3D; this.loginUser.value.passwordJugador;
+    const toggle &#x3D; this.loginUser.value.cambioLoginSignup;
+
+    if (this.isAnonimous) {
+      this.anonimLogout();
+    }
+    if ( toggle &#x3D;&#x3D;&#x3D; &#x27;register&#x27;) {
+      this.loginAuth.auth.createUserWithEmailAndPassword(email, password)
+      .then( data &#x3D;&gt; {
+          confirm(&#x27;Se ha creado la cuenta con el correo: &#x27; + data.user.email +
+          &#x27;. Ademas se ha iniciado sesion de manera automatica, buena partida!&#x27;);
+          this.userLogged &#x3D; true;
+      })
+      .catch( err &#x3D;&gt; {
+        if ( err.code &#x3D;&#x3D;&#x3D; &#x27;auth/email-already-in-use&#x27; ) {
+          confirm(&#x27;Este correo ya se encuentra en uso, por favor seleccione otro.&#x27;);
+        } else {
+          confirm(&#x27;Ha ocurrido un error inesperado con el registro.&#x27;);
+        }
+      });
+    } else {
+      this.loginAuth.auth.signInWithEmailAndPassword(email, password)
+      .then( data &#x3D;&gt; {
+        this.setLocalstorage();
+        confirm(&#x27;Ingreso como: &#x27; + data.user.email);
+        this.userLogged &#x3D; true;
+      })
+      .catch( err &#x3D;&gt; {
+        if ( err.code &#x3D;&#x3D;&#x3D; &#x27;auth/user-not-found&#x27; ) {
+          confirm(&#x27;No se encontro el correo ingresado, por favor seleccione otro.&#x27;);
+        } else if ( err.code &#x3D;&#x3D;&#x3D; &#x27;auth/wrong-password&#x27; ) {
+          confirm(&#x27;La contraseña introducida es erronea, por favor seleccione otra.&#x27;);
+        } else {
+          confirm(&#x27;Ha ocurrido un error inesperado con el acceso.&#x27;);
+        }
+      });
+    }
+  }
+  /**
+   * Desloguea al usuario anónimo por si estaba activo.
+   * Envia un correo de recuperacion de contraseña al correo indicado
+   * como parametro a la función sendPasswordResetEmail() controlando
+   * los errores.
+   * Este correo que se genera de manera automática puede ser personalizado
+   * en las configuraciones de las plantillas de Authentication en firebase.
+   */
+  changePassword() {
+    const email &#x3D; this.loginUser.value.emailJugador;
+
+    if (this.isAnonimous) {
+      this.anonimLogout();
+    }
+    if ( confirm(&#x27;Se enviará la recuperacion de contraseña al correo: &#x27; + email + &#x27;, ¿Está seguro?&#x27;) ) {
+      this.loginAuth.auth.sendPasswordResetEmail( email )
+      .then( res &#x3D;&gt; {
+        confirm(&#x27;Se ha enviado exitosamente el correo de cambio de contraseña.&#x27;);
+      })
+      .catch( err &#x3D;&gt; {
+        if ( err.code &#x3D;&#x3D;&#x3D; &#x27;auth/user-not-found&#x27; ) {
+          confirm(&#x27;No existe el correo ingresado, por favor seleccione otro.&#x27;);
+        } else {
+          confirm(&#x27;Ha ocurrido un error inesperado al enviar el correo de cambio de contraseña.&#x27;);
+        }
+      });
+    }
+  }
+  /**
+   * Invoca a la función que guarda en el localstorage y desloguea
+   * al usuario anónimo por si estaba activo.
+   * Creación de cuenta y/o inicio de sesión a traves de Google,
+   * usando la función &quot;signInWithRedirect()&quot; con el provider de Google
+   * &quot;GoogleAuthProvider()&quot; y controlando los posibles errores.
+   * La función &quot;signInWithRedirect()&quot; y &quot;signInWithPopup()&quot; hacen las
+   * mismas funciones, con la diferencia que uno crea una ventana emergente
+   * y el otro una redireccion en la misma pestaña.
+   */
+  googleLogin() {
+    this.setLocalstorage();
+    if (this.isAnonimous) {
+      this.anonimLogout();
+    }
+    // Funciona bien en Chrome pero en Firefox y Android crea una pestaña y no sabe volver.
+    // this.loginAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    // Funciona bien en Chrome y Firefox pero NO en Android nativo, no aparece el redirect.
+    this.loginAuth.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider())
+    .catch( err &#x3D;&gt; {
+      console.log(err);
+    });
+
+  }
+  /**
+   * Invoca a la función que guarda en el localstorage y desloguea
+   * al usuario anónimo por si estaba activo.
+   * Creación de cuenta y/o inicio de sesión a traves de Facebook,
+   * usando la función &quot;signInWithRedirect()&quot; con el provider de Facebook
+   * &quot;FacebookAuthProvider()&quot; y controlando los posibles errores.
+   * La función &quot;signInWithRedirect()&quot; y &quot;signInWithPopup()&quot; hacen las
+   * mismas funciones, con la diferencia que uno crea una ventana emergente
+   * y el otro una redireccion en la misma pestaña.
+   */
+  facebookLogin() {
+    this.setLocalstorage();
+    if (this.isAnonimous) {
+      this.anonimLogout();
+    }
+    // Funciona bien en Chrome pero en Firefox y Android crea una pestaña y no sabe volver.
+    // this.loginAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider());
+    // Funciona bien en Chrome y Firefox pero NO en Android nativo, no aparece el redirect.
+    this.loginAuth.auth.signInWithRedirect(new firebase.auth.FacebookAuthProvider())
+    .catch( err &#x3D;&gt; {
+      if ( err.code &#x3D;&#x3D;&#x3D; &#x27;auth/account-exists-with-different-credential&#x27; ) {
+        confirm(&#x27;El correo electronico usado con la cuenta de Facebook ya esta registrado!&#x27;);
+      } else {
+        console.log(err);
+      }
+    });
+  }
+  /** Inicio de sesión creando una cuenta anónima, esta cuenta anónima
+   * eventualmente puede transformarse en una cuenta con correo
+   * electronico manteniendo toda la información que pudiera tener.
+   */
+  anonimLogin() {
+    this.setLocalstorage();
+    this.loginAuth.auth.signInAnonymously()
+    .catch( err &#x3D;&gt; {
+      confirm(&#x27;Problemas para logearte de manera anonima!&#x27;);
+    });
+  }
+  /** Elimino la cuenta temporal del user anonimo. */
+  anonimLogout() {
+    this.loginAuth.auth.currentUser.delete();
+  }
+  /**
+   * Elimina la cuenta que esta logueada en ese momento con la función &quot;delete()&quot;
+   * controlando el flujo de error y ademas cerrando la sesion al usuario.
+   */
+  deleteUser() {
+    if ( confirm(&#x27;Vas a eliminar tu cuenta de manera permanente, ¿Estás seguro?&#x27;) ) {
+      this.loginAuth.auth.currentUser.delete().
+      then( res &#x3D;&gt; {
+        confirm(&#x27;Se ha eliminado exitosamente!&#x27;);
+        this.loginAuth.auth.signOut()
+        .then( del &#x3D;&gt; {
+          confirm(&#x27;Sesion cerrada por eliminación de cuenta.&#x27;);
+          this.userLogged &#x3D; false;
+        });
+      }).catch( err &#x3D;&gt; {
+        confirm(&#x27;Ha ocurrido un error inesperado al intentar eliminar la cuenta.&#x27;);
+      });
+    }
+  }
+  /**
+   * Cierra cualquier sesión que este iniciada con la funcion &quot;signOut()&quot;
+   * y lo despliega en un confirm() al uduario.
+   */
+  logout() {
+    if ( confirm(&#x27;¿Está seguro que desea cerrar la sesion?&#x27;) ) {
+      this.loginAuth.auth.signOut()
+      .then( del &#x3D;&gt; {
+        confirm(&#x27;Sesion cerrada!&#x27;);
+        this.userLogged &#x3D; false;
+      });
+    }
+  }
+  /** Guarda en el localStorage el queryParamMap que recata del guard. */
+  setLocalstorage() {
+    // Rescato la URL que se intento entrar y la guardo en localstorage, si no existe uso &#x27;/&#x27;
+    this.returnUrl &#x3D; this.route.snapshot.queryParamMap.get(&#x27;returnUrl&#x27;) || &#x27;/&#x27;;
+    localStorage.setItem(&#x27;returnUrl&#x27;, this.returnUrl);
+  }
+  /** Ocualta todo menos el form de login. */
+  showLogin() {
+    this.showLoginFlag &#x3D; true;
+    this.showRegisterFlag &#x3D; false;
+    this.showSocialFlag &#x3D; false;
+    this.showAnonimFlag &#x3D; false;
+  }
+  /** Ocualta todo menos el form de registro. */
+  showRegister() {
+    this.showLoginFlag &#x3D; false;
+    this.showRegisterFlag &#x3D; true;
+    this.showSocialFlag &#x3D; false;
+    this.showAnonimFlag &#x3D; false;
+  }
+  /** Ocualta todo menos las redes sociales. */
+  showSocial() {
+    this.showLoginFlag &#x3D; false;
+    this.showRegisterFlag &#x3D; false;
+    this.showSocialFlag &#x3D; true;
+    this.showAnonimFlag &#x3D; false;
+  }
+  /** Ocualta todo menos el acceso anónimo. */
+  showAnonim() {
+    this.showLoginFlag &#x3D; false;
+    this.showRegisterFlag &#x3D; false;
+    this.showSocialFlag &#x3D; false;
+    this.showAnonimFlag &#x3D; true;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
+  &lt;form [formGroup]&#x3D;&quot;loginUser&quot; [ngClass]&#x3D;&quot;userLogged ? &#x27;formLogged&#x27; : &#x27;loginForm&#x27;&quot;&gt;
+
+    &lt;h1&gt;¡Bienvenido a la aplicación!&lt;/h1&gt;
+
+    &lt;span class&#x3D;&quot;texto-ayuda&quot; *ngIf&#x3D;&quot;!userLogged&quot;&gt;Seleccione el tipo de inicio de sesión o bien registrar una cuenta:&lt;/span&gt;
+
+    &lt;p class&#x3D;&quot;texto-ayuda&quot; *ngIf&#x3D;&quot;userLogged&quot;&gt;Ya tiene iniciada la sesion en la aplicación!&lt;/p&gt;
+
+    &lt;!-- Inicio de sesion con correo o Registro de cuenta --&gt;
+    &lt;div class&#x3D;&quot;toggleForm&quot; *ngIf&#x3D;&quot;!userLogged&quot;&gt;
+      &lt;mat-button-toggle-group formControlName&#x3D;&quot;cambioLoginSignup&quot;&gt;
+        &lt;mat-button-toggle value&#x3D;&quot;login&quot; (click)&#x3D;&quot;showLogin()&quot;&gt;
+          Iniciar sesión
+        &lt;/mat-button-toggle&gt;
+        &lt;mat-button-toggle value&#x3D;&quot;register&quot; (click)&#x3D;&quot;showRegister()&quot;&gt;
+          Registrar cuenta
+        &lt;/mat-button-toggle&gt;
+        &lt;mat-button-toggle value&#x3D;&quot;social&quot; (click)&#x3D;&quot;showSocial()&quot;&gt;
+          Redes sociales
+        &lt;/mat-button-toggle&gt;
+        &lt;mat-button-toggle value&#x3D;&quot;social&quot; (click)&#x3D;&quot;showAnonim()&quot;&gt;
+          Modo anónimo
+        &lt;/mat-button-toggle&gt;
+      &lt;/mat-button-toggle-group&gt;
+    &lt;/div&gt;
+    &lt;div *ngIf&#x3D;&quot;!userLogged &amp;&amp; ( showLoginFlag || showRegisterFlag )&quot;&gt;
+      &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+        &lt;mat-label&gt;Ingrese su correo&lt;/mat-label&gt;
+        &lt;input type&#x3D;&quot;email&quot; matInput formControlName&#x3D;&quot;emailJugador&quot;&gt;
+        &lt;mat-icon matSuffix&gt;account_box&lt;/mat-icon&gt;
+      &lt;/mat-form-field&gt;
+    &lt;/div&gt;
+    &lt;div *ngIf&#x3D;&quot;!userLogged &amp;&amp; ( showLoginFlag || showRegisterFlag )&quot;&gt;
+      &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+        &lt;mat-label&gt;Ingrese la contraseña&lt;/mat-label&gt;
+        &lt;input type&#x3D;&quot;password&quot; matInput formControlName&#x3D;&quot;passwordJugador&quot;&gt;
+        &lt;mat-icon matSuffix&gt;assignment_ind&lt;/mat-icon&gt;
+      &lt;/mat-form-field&gt;
+    &lt;/div&gt;
+    &lt;!--  --&gt;
+    &lt;button class&#x3D;&quot;boton&quot; mat-raised-button color&#x3D;&quot;warn&quot; (click)&#x3D;&quot;logout()&quot; *ngIf&#x3D;&quot;userLogged&quot;&gt;Salir de la sesión&lt;/button&gt;
+    &lt;button class&#x3D;&quot;boton&quot; mat-raised-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;login()&quot; *ngIf&#x3D;&quot;!userLogged &amp;&amp; showLoginFlag&quot; [disabled]&#x3D;&quot;!loginUser.valid || userLogged&quot;&gt;Iniciar sesión&lt;/button&gt;
+    &lt;button class&#x3D;&quot;boton&quot; mat-raised-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;changePassword()&quot; *ngIf&#x3D;&quot;!userLogged &amp;&amp; showLoginFlag&quot;&gt;¿Olvidaste la contraseña?&lt;/button&gt;
+    &lt;button class&#x3D;&quot;boton&quot; mat-raised-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;login()&quot; *ngIf&#x3D;&quot;showRegisterFlag&quot; [disabled]&#x3D;&quot;!loginUser.valid || userLogged&quot;&gt;Registrar email&lt;/button&gt;
+    &lt;!-- Opciones del usuario --&gt;
+    &lt;mat-expansion-panel class&#x3D;&quot;panel&quot; *ngIf&#x3D;&quot;userLogged&quot;&gt;
+      &lt;mat-expansion-panel-header class&#x3D;&quot;greenColor&quot;&gt;
+        &lt;mat-panel-title&gt;
+          Borrado de la cuenta
+        &lt;/mat-panel-title&gt;
+      &lt;/mat-expansion-panel-header&gt;
+      &lt;!-- Inicio del contenido del expansion panel --&gt;
+      &lt;button mat-raised-button color&#x3D;&quot;warn&quot; (click)&#x3D;&quot;deleteUser()&quot; *ngIf&#x3D;&quot;userLogged&quot;&gt;Eliminar la cuenta&lt;/button&gt;
+      &lt;!-- Fin del contenido del expansion panel --&gt;
+    &lt;/mat-expansion-panel&gt;
+    &lt;!-- Inicio de sesion con Google --&gt;
+    &lt;div *ngIf&#x3D;&quot;!userLogged &amp;&amp; showSocialFlag&quot; class&#x3D;&quot;loginIcons&quot;&gt;
+      &lt;div class&#x3D;&quot;socialForm&quot;&gt;
+        &lt;img appHover src&#x3D;&quot;./assets/images/google-icon.png&quot; (click)&#x3D;&quot;googleLogin()&quot; class&#x3D;&quot;googleIcon animated&quot;&gt;
+        &lt;img appHover src&#x3D;&quot;./assets/images/facebook-icon.png&quot; (click)&#x3D;&quot;facebookLogin()&quot; class&#x3D;&quot;facebookIcon animated&quot;&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div *ngIf&#x3D;&quot;!userLogged &amp;&amp; showAnonimFlag&quot; class&#x3D;&quot;loginIcons&quot;&gt;
+      &lt;div class&#x3D;&quot;socialForm&quot;&gt;
+        &lt;img appHover *ngIf&#x3D;&quot;!isAnonimous&quot; src&#x3D;&quot;./assets/images/anonim-icon.png&quot; (click)&#x3D;&quot;anonimLogin()&quot; class&#x3D;&quot;anonimIconLogin animated&quot;&gt;
+        &lt;img appHover *ngIf&#x3D;&quot;isAnonimous&quot; src&#x3D;&quot;./assets/images/anonim-icon.png&quot; (click)&#x3D;&quot;anonimLogout()&quot; class&#x3D;&quot;anonimIconLogout animated&quot;&gt;
+      &lt;/div&gt;
+      &lt;span class&#x3D;&quot;texto-ayuda&quot; *ngIf&#x3D;&quot;!isAnonimous&quot;&gt;Toque en la figura para entrar como invitado!&lt;/span&gt;
+      &lt;span class&#x3D;&quot;texto-ayuda&quot; *ngIf&#x3D;&quot;isAnonimous&quot;&gt;Toque en la figura para salir del modo invitado!&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;!--  --&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./login.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">h1, h4 {
+  text-align: center;
+}
+mat-button-toggle-group {
+  @media (max-width: 425px) {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 150%;
+  // background-image: url(&#x27;./../../../assets/images/image-umiapp.jpg&#x27;);
+  // background-repeat: round;
+}
+.loginForm, .formLogged {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  border: 1px solid;
+  width: 620px;
+  height: auto;
+  margin-top: 3%;
+  padding-bottom: 35Px;
+  background: white;
+  opacity: 0.93;
+  border-radius: 4%;
+  @media (max-width: 425px) {
+    width: 82%;
+  }
+  @media (max-width: 320px) {
+    width: 82%;
+  }
+}
+.formLogged {
+  @media (max-width: 375px) {
+    width: 92%;
+  }
+}
+
+.loginIcons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.googleIcon {
+  width: 68px;
+  height: 68px;
+  margin-top: 8px;
+  // @media (max-width: 425px) {
+  //   display: none;
+  // }
+}
+.facebookIcon {
+  width: 85px;
+  // @media (max-width: 425px) {
+  //   display: none;
+  // }
+}
+.anonimIconLogin, .anonimIconLogout {
+  text-align: center;
+  height: 63px;
+  margin-top: 11px;
+  border-radius: 50%;
+}
+.anonimIconLogin {
+  background: green;
+}
+.anonimIconLogout {
+  background: red;
+}
+.toggleForm {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin: 6% 0%;
+  @media (max-width: 425px) {
+    width: 65%;
+  }
+}
+.socialForm, .anonimForm {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+.panel {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.texto-ayuda {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  width: 90%;
+  margin: 2% 0%;
+  @media (max-width: 425px) {
+    font-size: 12px;
+  }
+}
+.boton {
+  margin: 1%;
+}
+.golden {
+  color: darkgoldenrod;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <form [formGroup]="loginUser" [ngClass]="userLogged ? \'formLogged\' : \'loginForm\'">    <h1>¡Bienvenido a la aplicación!</h1>    <span class="texto-ayuda" *ngIf="!userLogged">Seleccione el tipo de inicio de sesión o bien registrar una cuenta:</span>    <p class="texto-ayuda" *ngIf="userLogged">Ya tiene iniciada la sesion en la aplicación!</p>    <!-- Inicio de sesion con correo o Registro de cuenta -->    <div class="toggleForm" *ngIf="!userLogged">      <mat-button-toggle-group formControlName="cambioLoginSignup">        <mat-button-toggle value="login" (click)="showLogin()">          Iniciar sesión        </mat-button-toggle>        <mat-button-toggle value="register" (click)="showRegister()">          Registrar cuenta        </mat-button-toggle>        <mat-button-toggle value="social" (click)="showSocial()">          Redes sociales        </mat-button-toggle>        <mat-button-toggle value="social" (click)="showAnonim()">          Modo anónimo        </mat-button-toggle>      </mat-button-toggle-group>    </div>    <div *ngIf="!userLogged && ( showLoginFlag || showRegisterFlag )">      <mat-form-field appearance="outline">        <mat-label>Ingrese su correo</mat-label>        <input type="email" matInput formControlName="emailJugador">        <mat-icon matSuffix>account_box</mat-icon>      </mat-form-field>    </div>    <div *ngIf="!userLogged && ( showLoginFlag || showRegisterFlag )">      <mat-form-field appearance="outline">        <mat-label>Ingrese la contraseña</mat-label>        <input type="password" matInput formControlName="passwordJugador">        <mat-icon matSuffix>assignment_ind</mat-icon>      </mat-form-field>    </div>    <!--  -->    <button class="boton" mat-raised-button color="warn" (click)="logout()" *ngIf="userLogged">Salir de la sesión</button>    <button class="boton" mat-raised-button color="primary" (click)="login()" *ngIf="!userLogged && showLoginFlag" [disabled]="!loginUser.valid || userLogged">Iniciar sesión</button>    <button class="boton" mat-raised-button color="primary" (click)="changePassword()" *ngIf="!userLogged && showLoginFlag">¿Olvidaste la contraseña?</button>    <button class="boton" mat-raised-button color="primary" (click)="login()" *ngIf="showRegisterFlag" [disabled]="!loginUser.valid || userLogged">Registrar email</button>    <!-- Opciones del usuario -->    <mat-expansion-panel class="panel" *ngIf="userLogged">      <mat-expansion-panel-header class="greenColor">        <mat-panel-title>          Borrado de la cuenta        </mat-panel-title>      </mat-expansion-panel-header>      <!-- Inicio del contenido del expansion panel -->      <button mat-raised-button color="warn" (click)="deleteUser()" *ngIf="userLogged">Eliminar la cuenta</button>      <!-- Fin del contenido del expansion panel -->    </mat-expansion-panel>    <!-- Inicio de sesion con Google -->    <div *ngIf="!userLogged && showSocialFlag" class="loginIcons">      <div class="socialForm">        <img appHover src="./assets/images/google-icon.png" (click)="googleLogin()" class="googleIcon animated">        <img appHover src="./assets/images/facebook-icon.png" (click)="facebookLogin()" class="facebookIcon animated">      </div>    </div>    <div *ngIf="!userLogged && showAnonimFlag" class="loginIcons">      <div class="socialForm">        <img appHover *ngIf="!isAnonimous" src="./assets/images/anonim-icon.png" (click)="anonimLogin()" class="anonimIconLogin animated">        <img appHover *ngIf="isAnonimous" src="./assets/images/anonim-icon.png" (click)="anonimLogout()" class="anonimIconLogout animated">      </div>      <span class="texto-ayuda" *ngIf="!isAnonimous">Toque en la figura para entrar como invitado!</span>      <span class="texto-ayuda" *ngIf="isAnonimous">Toque en la figura para salir del modo invitado!</span>    </div>    <!--  -->  </form></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'SpinnerComponent', 'selector': 'app-spinner'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'LoginComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'LoginComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

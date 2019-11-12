@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { ActivatedRoute } from '@angular/router';
@@ -6,12 +6,18 @@ import { ActivatedRoute } from '@angular/router';
 import * as firebase from 'firebase/app';
 import { SpinnerService } from 'src/app/servicies/spinner.service';
 
+/**
+ * Componente que se encarga de crear una cuenta con correo electronico,
+ * loguear con cuenta propia o a traves de alguna red social, la posibilidad
+ * de acceder de manera anónima, cerrar sesión y eliminar cualquier cuenta.
+ */
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
   userLogged = false;
   returnUrl: string;
@@ -22,7 +28,11 @@ export class LoginComponent implements OnInit {
   showSocialFlag = false;
   showAnonimFlag = false;
 
-  // Formulario para el login del jugador
+  /**
+   * Formulario de registro o de logueo, teniendo en cuenta que
+   * la dirección de correo electronico sea valida segun formato
+   * xxxxxx@xxxxxx.com
+   */
   loginUser = this.fb.group({
     emailJugador: [ '', [Validators.required,
       // tslint:disable-next-line: max-line-length
@@ -31,6 +41,15 @@ export class LoginComponent implements OnInit {
     cambioLoginSignup: [ '', []]
   });
 
+  /**
+   * El contructor se fija si el usuario esta conectado o es anonimo y lo guarda en dos variables.
+   * Ademas cuando se recien empieza a ejecutarse activa el spinner y cuando termina de traer la
+   * información de firebase desactiva el spinner.
+   * @param fb Instancia del servicio de FormBuilder
+   * @param loginAuth Instancia del servicio de AngularFireAuth
+   * @param route Instancia del servicio de ActivatedRoute
+   * @param spinner Instancia del servicio de SpinnerService
+   */
   constructor(private fb: FormBuilder,
               public loginAuth: AngularFireAuth,
               private route: ActivatedRoute,
@@ -48,10 +67,18 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-  }
-
-  // Usuarios con correo electronico
+  /**
+   * Desloguea al usuario anónimo por si estaba activo.
+   * Dependiendo de que se seleccione en el toogle se ejecuta
+   * el inicio de sesión o el registro de cuenta.
+   * En el caso de inicio de sesión se ejecuta la función
+   * "signInWithEmailAndPassword()" pasandole por parametro
+   * el correo electronico y la contraseña del formulario.
+   * En el caso de registro de cuenta se ejecuta la función
+   * "createUserWithEmailAndPassword()" pasandole por parametro
+   * el correo electronico y la contraseña del formulario.
+   * En ambos casos se controla el flujo de errores.
+   */
   login() {
     const email = this.loginUser.value.emailJugador;
     const password = this.loginUser.value.passwordJugador;
@@ -92,6 +119,14 @@ export class LoginComponent implements OnInit {
       });
     }
   }
+  /**
+   * Desloguea al usuario anónimo por si estaba activo.
+   * Envia un correo de recuperacion de contraseña al correo indicado
+   * como parametro a la función sendPasswordResetEmail() controlando
+   * los errores.
+   * Este correo que se genera de manera automática puede ser personalizado
+   * en las configuraciones de las plantillas de Authentication en firebase.
+   */
   changePassword() {
     const email = this.loginUser.value.emailJugador;
 
@@ -112,7 +147,16 @@ export class LoginComponent implements OnInit {
       });
     }
   }
-  // Usuarios con Google
+  /**
+   * Invoca a la función que guarda en el localstorage y desloguea
+   * al usuario anónimo por si estaba activo.
+   * Creación de cuenta y/o inicio de sesión a traves de Google,
+   * usando la función "signInWithRedirect()" con el provider de Google
+   * "GoogleAuthProvider()" y controlando los posibles errores.
+   * La función "signInWithRedirect()" y "signInWithPopup()" hacen las
+   * mismas funciones, con la diferencia que uno crea una ventana emergente
+   * y el otro una redireccion en la misma pestaña.
+   */
   googleLogin() {
     this.setLocalstorage();
     if (this.isAnonimous) {
@@ -125,8 +169,18 @@ export class LoginComponent implements OnInit {
     .catch( err => {
       console.log(err);
     });
+
   }
-  // Usuarios con Facebook
+  /**
+   * Invoca a la función que guarda en el localstorage y desloguea
+   * al usuario anónimo por si estaba activo.
+   * Creación de cuenta y/o inicio de sesión a traves de Facebook,
+   * usando la función "signInWithRedirect()" con el provider de Facebook
+   * "FacebookAuthProvider()" y controlando los posibles errores.
+   * La función "signInWithRedirect()" y "signInWithPopup()" hacen las
+   * mismas funciones, con la diferencia que uno crea una ventana emergente
+   * y el otro una redireccion en la misma pestaña.
+   */
   facebookLogin() {
     this.setLocalstorage();
     if (this.isAnonimous) {
@@ -144,7 +198,10 @@ export class LoginComponent implements OnInit {
       }
     });
   }
-  // Usiarios con anonimato
+  /** Inicio de sesión creando una cuenta anónima, esta cuenta anónima
+   * eventualmente puede transformarse en una cuenta con correo
+   * electronico manteniendo toda la información que pudiera tener.
+   */
   anonimLogin() {
     this.setLocalstorage();
     this.loginAuth.auth.signInAnonymously()
@@ -152,10 +209,14 @@ export class LoginComponent implements OnInit {
       confirm('Problemas para logearte de manera anonima!');
     });
   }
+  /** Elimino la cuenta temporal del user anonimo. */
   anonimLogout() {
     this.loginAuth.auth.currentUser.delete();
   }
-  // Logout y delete son comunes para cualquier autenticacion.
+  /**
+   * Elimina la cuenta que esta logueada en ese momento con la función "delete()"
+   * controlando el flujo de error y ademas cerrando la sesion al usuario.
+   */
   deleteUser() {
     if ( confirm('Vas a eliminar tu cuenta de manera permanente, ¿Estás seguro?') ) {
       this.loginAuth.auth.currentUser.delete().
@@ -171,6 +232,10 @@ export class LoginComponent implements OnInit {
       });
     }
   }
+  /**
+   * Cierra cualquier sesión que este iniciada con la funcion "signOut()"
+   * y lo despliega en un confirm() al uduario.
+   */
   logout() {
     if ( confirm('¿Está seguro que desea cerrar la sesion?') ) {
       this.loginAuth.auth.signOut()
@@ -180,30 +245,34 @@ export class LoginComponent implements OnInit {
       });
     }
   }
-  // Otros
+  /** Guarda en el localStorage el queryParamMap que recata del guard. */
   setLocalstorage() {
     // Rescato la URL que se intento entrar y la guardo en localstorage, si no existe uso '/'
     this.returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/';
     localStorage.setItem('returnUrl', this.returnUrl);
   }
+  /** Ocualta todo menos el form de login. */
   showLogin() {
     this.showLoginFlag = true;
     this.showRegisterFlag = false;
     this.showSocialFlag = false;
     this.showAnonimFlag = false;
   }
+  /** Ocualta todo menos el form de registro. */
   showRegister() {
     this.showLoginFlag = false;
     this.showRegisterFlag = true;
     this.showSocialFlag = false;
     this.showAnonimFlag = false;
   }
+  /** Ocualta todo menos las redes sociales. */
   showSocial() {
     this.showLoginFlag = false;
     this.showRegisterFlag = false;
     this.showSocialFlag = true;
     this.showAnonimFlag = false;
   }
+  /** Ocualta todo menos el acceso anónimo. */
   showAnonim() {
     this.showLoginFlag = false;
     this.showRegisterFlag = false;
