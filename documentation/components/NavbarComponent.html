@@ -185,7 +185,7 @@ Fue creado de manera automatica por el comando de Schematics =&gt; ng generate @
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/components/navbar/navbar.component.ts:29</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/components/navbar/navbar.component.ts:33</a></div>
                             </td>
                         </tr>
 
@@ -231,7 +231,7 @@ Fue creado de manera automatica por el comando de Schematics =&gt; ng generate @
                                                     </td>
                                                     
                                                         <td>
-                                                                <code><p>Servicio de autenticación de firebase.</p>
+                                                                <code><p>Instancia del servicio de autenticación de firebase.</p>
 </code>
                                                         </td>
                                                 </tr>
@@ -275,14 +275,16 @@ Fue creado de manera automatica por el comando de Schematics =&gt; ng generate @
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="48"
-                            class="link-to-prism">src/app/components/navbar/navbar.component.ts:48</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">src/app/components/navbar/navbar.component.ts:53</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Cierra el drawer si la pantalla es igual o menor que 600 pixeles. </p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -327,10 +329,16 @@ Fue creado de manera automatica por el comando de Schematics =&gt; ng generate @
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/components/navbar/navbar.component.ts:23</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/components/navbar/navbar.component.ts:26</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>ViewChild que esta pendiente del comportamiento del drawer de opciones del navbar. </p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -354,10 +362,16 @@ Fue creado de manera automatica por el comando de Schematics =&gt; ng generate @
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/components/navbar/navbar.component.ts:21</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/components/navbar/navbar.component.ts:23</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Determina si el usuario es anónimo. </p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -390,10 +404,16 @@ Fue creado de manera automatica por el comando de Schematics =&gt; ng generate @
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/components/navbar/navbar.component.ts:25</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/components/navbar/navbar.component.ts:29</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Obserbable que esta pendiente del punto de quiebre del navbar. </p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -418,13 +438,13 @@ Fue creado de manera automatica por el comando de Schematics =&gt; ng generate @
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/components/navbar/navbar.component.ts:35</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/components/navbar/navbar.component.ts:39</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description">Servicio de autenticación de firebase.</div>
+                        <div class="io-description">Instancia del servicio de autenticación de firebase.</div>
                     </td>
                 </tr>
 
@@ -449,10 +469,16 @@ Fue creado de manera automatica por el comando de Schematics =&gt; ng generate @
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/components/navbar/navbar.component.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/components/navbar/navbar.component.ts:21</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Determina si el usuario esta conectado. </p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -481,39 +507,44 @@ import { MatSidenav } from &#x27;@angular/material&#x27;;
 })
 export class NavbarComponent {
 
+  /** Determina si el usuario esta conectado. */
   userlogged &#x3D; false;
+  /** Determina si el usuario es anónimo. */
   isAnonimous: boolean;
 
+  /** ViewChild que esta pendiente del comportamiento del drawer de opciones del navbar. */
   @ViewChild(&#x27;drawer&#x27;, {static: false} ) drawer: MatSidenav;
 
+  /** Obserbable que esta pendiente del punto de quiebre del navbar. */
   isHandset$: Observable&lt;boolean&gt; &#x3D; this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result &#x3D;&gt; result.matches),
       shareReplay()
     );
 
-    /**
-     * El contructor se fija si el usuario esta conectado o es anonimo y lo guarda en dos variables.
-     * @param loginAuth Servicio de autenticación de firebase.
-     */
-    constructor(private breakpointObserver: BreakpointObserver, public loginAuth: AngularFireAuth) {
-      this.loginAuth.user
-      .subscribe( user &#x3D;&gt; {
-        if ( user ) {
-          this.userlogged &#x3D; true;
-          this.isAnonimous &#x3D; user.isAnonymous;
-        } else {
-          this.userlogged &#x3D; false;
-          this.isAnonimous &#x3D; false;
-        }
-      });
-    }
-
-    close() {
-      if ( window.innerWidth &lt;&#x3D; 600 ) {
-        this.drawer.close();
+  /**
+   * El contructor se fija si el usuario esta conectado o es anonimo y lo guarda en dos variables.
+   * @param loginAuth Instancia del servicio de autenticación de firebase.
+   */
+  constructor(private breakpointObserver: BreakpointObserver, public loginAuth: AngularFireAuth) {
+    this.loginAuth.user
+    .subscribe( user &#x3D;&gt; {
+      if ( user ) {
+        this.userlogged &#x3D; true;
+        this.isAnonimous &#x3D; user.isAnonymous;
+      } else {
+        this.userlogged &#x3D; false;
+        this.isAnonimous &#x3D; false;
       }
+    });
+  }
+
+  /** Cierra el drawer si la pantalla es igual o menor que 600 pixeles. */
+  close() {
+    if ( window.innerWidth &lt;&#x3D; 600 ) {
+      this.drawer.close();
     }
+  }
 }
 </code></pre>
     </div>

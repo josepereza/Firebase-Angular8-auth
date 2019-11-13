@@ -4,11 +4,8 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { map } from 'rxjs/operators';
 
 /**
- * Este es el guard que se fija que no se pueda acceder a cierta URL sin tener iniciada la sesión
- * de algún usuario en firebase.
- * Además también a traves de queryParams retorna la URL a la que se intento acceder para en caso
- * de tener los permisos necesarios, tras iniciar sesión de forma exitosa se lo redireccione
- * automaticamente a esa URL original.
+ * Este guard se fija que no se pueda acceder a cierta URL sin tener iniciada la sesión
+ * de algún usuario en firebase y redireccionarlo adecuadamente.
  */
 
 @Injectable({
@@ -16,10 +13,23 @@ import { map } from 'rxjs/operators';
 })
 export class AuthGuard implements CanActivate {
 
+  /** Variable que determina si el usuario tiene sesión iniciada. */
   userLogged: boolean;
 
+  /**
+   * Instanciador ser servicios.
+   * @param loginAuth Instancia el servicio de autenticación de firebase
+   * @param router Instancia el servicio del Router
+   */
   constructor(public loginAuth: AngularFireAuth, private router: Router) {}
 
+  /**
+   * Si el usuario esta conectado lo deja pasar a la URL solicitada.
+   * En caso de que no este conectado de lo redirecciona a la pagina principal
+   * o a traves de queryParams retorna la URL a la que se intento acceder originalmente.
+   * @param next Propio de canActivate
+   * @param state Propio de canActivate
+   */
   canActivate( next: ActivatedRouteSnapshot, state: RouterStateSnapshot): any {
     return this.loginAuth.user
     .pipe(

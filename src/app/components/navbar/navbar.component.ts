@@ -17,37 +17,42 @@ import { MatSidenav } from '@angular/material';
 })
 export class NavbarComponent {
 
+  /** Determina si el usuario esta conectado. */
   userlogged = false;
+  /** Determina si el usuario es anónimo. */
   isAnonimous: boolean;
 
+  /** ViewChild que esta pendiente del comportamiento del drawer de opciones del navbar. */
   @ViewChild('drawer', {static: false} ) drawer: MatSidenav;
 
+  /** Obserbable que esta pendiente del punto de quiebre del navbar. */
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
       shareReplay()
     );
 
-    /**
-     * El contructor se fija si el usuario esta conectado o es anonimo y lo guarda en dos variables.
-     * @param loginAuth Servicio de autenticación de firebase.
-     */
-    constructor(private breakpointObserver: BreakpointObserver, public loginAuth: AngularFireAuth) {
-      this.loginAuth.user
-      .subscribe( user => {
-        if ( user ) {
-          this.userlogged = true;
-          this.isAnonimous = user.isAnonymous;
-        } else {
-          this.userlogged = false;
-          this.isAnonimous = false;
-        }
-      });
-    }
-
-    close() {
-      if ( window.innerWidth <= 600 ) {
-        this.drawer.close();
+  /**
+   * El contructor se fija si el usuario esta conectado o es anonimo y lo guarda en dos variables.
+   * @param loginAuth Instancia del servicio de autenticación de firebase.
+   */
+  constructor(private breakpointObserver: BreakpointObserver, public loginAuth: AngularFireAuth) {
+    this.loginAuth.user
+    .subscribe( user => {
+      if ( user ) {
+        this.userlogged = true;
+        this.isAnonimous = user.isAnonymous;
+      } else {
+        this.userlogged = false;
+        this.isAnonimous = false;
       }
+    });
+  }
+
+  /** Cierra el drawer si la pantalla es igual o menor que 600 pixeles. */
+  close() {
+    if ( window.innerWidth <= 600 ) {
+      this.drawer.close();
     }
+  }
 }

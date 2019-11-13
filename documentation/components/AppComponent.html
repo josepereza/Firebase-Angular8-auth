@@ -187,6 +187,8 @@
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Instanciador ser servicios.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -195,6 +197,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -209,6 +212,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Instancia del servicio de router.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>loginAuth</td>
@@ -221,6 +228,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Instancia del servicio de autenticación de firebase.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>spinner</td>
@@ -233,6 +244,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Instancia del servicio de control para el spinner.</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -274,8 +289,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="28"
-                            class="link-to-prism">src/app/app.component.ts:28</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="34"
+                            class="link-to-prism">src/app/app.component.ts:34</a></div>
                 </td>
             </tr>
 
@@ -321,10 +336,15 @@ usa esta URL para volver a donde quiso entrar el usuario en primer lugar. Caso c
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/app.component.ts:22</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/app.component.ts:28</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description">Instancia del servicio de autenticación de firebase.</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -387,6 +407,12 @@ export class AppComponent implements OnInit {
    */
   showSpinner &#x3D; false;
 
+  /**
+   * Instanciador ser servicios.
+   * @param router Instancia del servicio de router.
+   * @param loginAuth Instancia del servicio de autenticación de firebase.
+   * @param spinner Instancia del servicio de control para el spinner.
+   */
   constructor(private router: Router, public loginAuth: AngularFireAuth, private spinner: SpinnerService) {}
 
   /**

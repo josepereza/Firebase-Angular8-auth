@@ -19,6 +19,12 @@ export class AppComponent implements OnInit {
    */
   showSpinner = false;
 
+  /**
+   * Instanciador ser servicios.
+   * @param router Instancia del servicio de router.
+   * @param loginAuth Instancia del servicio de autenticación de firebase.
+   * @param spinner Instancia del servicio de control para el spinner.
+   */
   constructor(private router: Router, public loginAuth: AngularFireAuth, private spinner: SpinnerService) {}
 
   /**

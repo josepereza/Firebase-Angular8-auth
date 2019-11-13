@@ -119,24 +119,6 @@ spinner de espera que se muestra en la aplicación.</p>
     </table>
 </section>
 
-            <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor()</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/servicies/spinner.service.ts:14</a></div>
-                            </td>
-                        </tr>
-
-            </tbody>
-        </table>
-</section>
 
             <section>
     
@@ -165,14 +147,16 @@ spinner de espera que se muestra en la aplicación.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/app/servicies/spinner.service.ts:22</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/servicies/spinner.service.ts:23</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Setea el valor del BehaviorSubject en false con un next. </p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -212,6 +196,8 @@ spinner de espera que se muestra en la aplicación.</p>
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Setea el valor del BehaviorSubject en true con un next. </p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -243,14 +229,17 @@ spinner de espera que se muestra en la aplicación.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="26"
-                            class="link-to-prism">src/app/servicies/spinner.service.ts:26</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">src/app/servicies/spinner.service.ts:31</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Retorna el BehaviorSubject como si fuera unobservable para que pueda ser
+usado desde cualquier lugar de la aplicación.</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
@@ -292,10 +281,16 @@ spinner de espera que se muestra en la aplicación.</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/servicies/spinner.service.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/servicies/spinner.service.ts:15</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Creo un BehaviorSubject porque este tipo de subject puede tener un valor inicial. </p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -318,18 +313,23 @@ import { BehaviorSubject } from &#x27;rxjs&#x27;;
 })
 export class SpinnerService {
 
+  /** Creo un BehaviorSubject porque este tipo de subject puede tener un valor inicial. */
   private spinnerSubject: BehaviorSubject&lt;boolean&gt; &#x3D; new BehaviorSubject(false);
 
-  constructor() { }
-
+  /** Setea el valor del BehaviorSubject en true con un next. */
   showSpinner() {
     this.spinnerSubject.next(true);
   }
 
+  /** Setea el valor del BehaviorSubject en false con un next. */
   hideSpinner() {
     this.spinnerSubject.next(false);
   }
 
+  /**
+   * Retorna el BehaviorSubject como si fuera unobservable para que pueda ser
+   * usado desde cualquier lugar de la aplicación.
+   */
   spinnerObservable() {
     return this.spinnerSubject.asObservable();
   }

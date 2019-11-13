@@ -14,6 +14,10 @@ import { Router } from '@angular/router';
 })
 export class ErrorComponent {
 
+  /**
+   * Instanciador ser servicios.
+   * @param router Instancia el servicio del Router
+   */
   constructor(private router: Router) { }
 
   /**

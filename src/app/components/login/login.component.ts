@@ -19,13 +19,19 @@ import { SpinnerService } from 'src/app/servicies/spinner.service';
 })
 export class LoginComponent {
 
+  /** Determina si el usuario esta conectado. */
   userLogged = false;
-  returnUrl: string;
+  /** Determina si el usuario es anónimo. */
   isAnonimous: boolean;
-
+  /** Se almacena la URL cuando regresa del guard. */
+  returnUrl: string;
+  /** Determina si se muestra la parte de inicio de sesión del toggle. */
   showLoginFlag = false;
+  /** Determina si se muestra la parte de registro del toggle. */
   showRegisterFlag = false;
+  /** Determina si se muestra la parte de redes sociales del toggle. */
   showSocialFlag = false;
+  /** Determina si se muestra la parte de anónimo del toggle. */
   showAnonimFlag = false;
 
   /**
@@ -51,7 +57,7 @@ export class LoginComponent {
    * @param spinner Instancia del servicio de SpinnerService
    */
   constructor(private fb: FormBuilder,
-              public loginAuth: AngularFireAuth,
+              private loginAuth: AngularFireAuth,
               private route: ActivatedRoute,
               private spinner: SpinnerService) {
     this.spinner.showSpinner();

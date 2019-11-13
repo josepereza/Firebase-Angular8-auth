@@ -65,11 +65,8 @@
                 <h3>Description</h3>
                 </p>
                 <p class="comment">
-                    <p>Este es el guard que se fija que no se pueda acceder a cierta URL sin tener iniciada la sesión
-de algún usuario en firebase.
-Además también a traves de queryParams retorna la URL a la que se intento acceder para en caso
-de tener los permisos necesarios, tras iniciar sesión de forma exitosa se lo redireccione
-automaticamente a esa URL original.</p>
+                    <p>Este guard se fija que no se pueda acceder a cierta URL sin tener iniciada la sesión
+de algún usuario en firebase y redireccionarlo adecuadamente.</p>
 
                 </p>
 
@@ -133,12 +130,14 @@ automaticamente a esa URL original.</p>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/guards/auth.guard.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/guards/auth.guard.ts:17</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Instanciador ser servicios.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -147,6 +146,7 @@ automaticamente a esa URL original.</p>
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -161,6 +161,10 @@ automaticamente a esa URL original.</p>
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Instancia el servicio de autenticación de firebase</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>router</td>
@@ -173,6 +177,10 @@ automaticamente a esa URL original.</p>
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Instancia el servicio del Router</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -210,14 +218,18 @@ automaticamente a esa URL original.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="23"
-                            class="link-to-prism">src/app/guards/auth.guard.ts:23</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">src/app/guards/auth.guard.ts:33</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Si el usuario esta conectado lo deja pasar a la URL solicitada.
+En caso de que no este conectado de lo redirecciona a la pagina principal
+o a traves de queryParams retorna la URL a la que se intento acceder originalmente.</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -227,6 +239,7 @@ automaticamente a esa URL original.</p>
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -241,6 +254,10 @@ automaticamente a esa URL original.</p>
                                     </td>
 
 
+                                    <td>
+                                        <p>Propio de canActivate</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>state</td>
@@ -253,6 +270,10 @@ automaticamente a esa URL original.</p>
                                     </td>
 
 
+                                    <td>
+                                        <p>Propio de canActivate</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -281,11 +302,8 @@ import { AngularFireAuth } from &#x27;@angular/fire/auth&#x27;;
 import { map } from &#x27;rxjs/operators&#x27;;
 
 /**
- * Este es el guard que se fija que no se pueda acceder a cierta URL sin tener iniciada la sesión
- * de algún usuario en firebase.
- * Además también a traves de queryParams retorna la URL a la que se intento acceder para en caso
- * de tener los permisos necesarios, tras iniciar sesión de forma exitosa se lo redireccione
- * automaticamente a esa URL original.
+ * Este guard se fija que no se pueda acceder a cierta URL sin tener iniciada la sesión
+ * de algún usuario en firebase y redireccionarlo adecuadamente.
  */
 
 @Injectable({
@@ -293,10 +311,23 @@ import { map } from &#x27;rxjs/operators&#x27;;
 })
 export class AuthGuard implements CanActivate {
 
+  /** Variable que determina si el usuario tiene sesión iniciada. */
   userLogged: boolean;
 
+  /**
+   * Instanciador ser servicios.
+   * @param loginAuth Instancia el servicio de autenticación de firebase
+   * @param router Instancia el servicio del Router
+   */
   constructor(public loginAuth: AngularFireAuth, private router: Router) {}
 
+  /**
+   * Si el usuario esta conectado lo deja pasar a la URL solicitada.
+   * En caso de que no este conectado de lo redirecciona a la pagina principal
+   * o a traves de queryParams retorna la URL a la que se intento acceder originalmente.
+   * @param next Propio de canActivate
+   * @param state Propio de canActivate
+   */
   canActivate( next: ActivatedRouteSnapshot, state: RouterStateSnapshot): any {
     return this.loginAuth.user
     .pipe(

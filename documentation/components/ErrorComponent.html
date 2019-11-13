@@ -165,6 +165,8 @@ a la pantalla principal de login.</p>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Instanciador ser servicios.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -173,6 +175,7 @@ a la pantalla principal de login.</p>
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -187,6 +190,10 @@ a la pantalla principal de login.</p>
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Instancia el servicio del Router</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -228,8 +235,8 @@ a la pantalla principal de login.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="23"
-                            class="link-to-prism">src/app/components/error/error.component.ts:23</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/app/components/error/error.component.ts:27</a></div>
                 </td>
             </tr>
 
@@ -270,6 +277,10 @@ import { Router } from &#x27;@angular/router&#x27;;
 })
 export class ErrorComponent {
 
+  /**
+   * Instanciador ser servicios.
+   * @param router Instancia el servicio del Router
+   */
   constructor(private router: Router) { }
 
   /**
