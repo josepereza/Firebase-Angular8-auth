@@ -1,3 +1,4 @@
+![Alt text](boiler.png)
 Esta aplicación esta diseñada para ser usada como boilerplate o inicio rápido, en caso de querer empezar un proyecto
 en Angular 8 con registro de cuenta, inicio de sesión con/sin redes sociales y/o modo anónimo.
 
